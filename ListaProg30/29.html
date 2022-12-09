@@ -1,0 +1,27 @@
+<script>
+    //PROBLEMA
+    /*
+    Desenvolva um programa que peça para o usuário informar 10 números. Após, identifique quantos desses números estão entre 100 e 200.
+    Apresente a percentagem e a quantidade de números que estão no intervalo sugeridos.
+    */
+
+    //ENTRADA
+
+    let lista100a200 = [];
+
+    //PROCESSAMENTO
+
+    for(contador = 1; contador <= 10; contador++) {
+        const numeros = Number(prompt("Informe um número"));
+        if(numeros >= 100 && numeros <= 200) {
+            lista100a200.push(numeros);
+        }
+    }
+    
+    //SAÍDA
+
+    let percentagemLista = lista100a200.length / 10 * 100;
+
+    document.write(`A quantidade de números que estão entre 100 e 200 é de ${lista100a200.length}, com ${percentagemLista.toFixed(2)}% dos números`);
+
+</script>

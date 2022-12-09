@@ -1,0 +1,26 @@
+<script>
+    //PROBLEMA
+    /*
+    Considere que Joãozinho tem 1,50 metros de altura e cresce 2 centímetros por ano. Zezinho tem 1,30 metros de altura e cresce 3 centímetros por ano.
+    Desenvolva um programa que calcule quantos anos serão necessários para que Zezinho alcance a altura de Joãozinho.
+    Apresente o resultado na tela.
+    */
+
+    //ENTRADA
+
+    //PROCESSAMENTO
+
+    let joaozinho = 1.5;
+    let zezinho = 1.3;
+
+    let anos = 1;
+    for(anos = 1; zezinho <= joaozinho; anos++) {
+        zezinho = zezinho + 0.03;
+        joaozinho = joaozinho + 0.02;
+    }
+    
+    //SAÍDA
+
+    document.write(`A altura de zezinho ultrapassará a altura de joãozinho em ${anos} anos.`);
+
+</script>

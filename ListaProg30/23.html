@@ -1,0 +1,52 @@
+<script>
+    //PROBLEMA
+    /*
+    Desenvolva um programa que pergunte ao espectador a sua idade e a sua avaliação sobre o filme, sendo que deverá informar R para REGULAR e B para BOM.
+    Apresente os seguintes dados:
+    - A média de idade das pessoas que responderam que o filme era REGULAR
+    - A média de idade das pessoas que responderam que o filme era BOM
+    - A média de idade de todas as pessoas que assistiram ao filme
+    - O percentual de pessoas que classificou o filme como REGULAR
+    - O percentual de pessoas que classificou o filme como BOM
+    */
+
+    //ENTRADA
+
+    const qntPessoas = parseInt(prompt("quantas pessoas assisitiram o filme?"));
+
+    //PROCESSAMENTO
+
+    let avaliacaoR = [];
+    let somaIdadeRegular = 0;
+    let avaliacaoB = [];
+    let somaIdadeBom = 0;
+
+    let somaIdades = 0;
+
+    for(contador = 1; contador <= qntPessoas; contador++) {
+        const idade = parseInt(prompt("Informe a sua idade?"));
+        const avaliacao = prompt("Informe a sua avaliação sobre o filme, sendo R-Regular ou B-Bom").toUpperCase().trim();
+        somaIdades = somaIdades + idade;
+        if(avaliacao === "R") {
+            avaliacaoR.push(avaliacao);
+            somaIdadeRegular = somaIdadeRegular + idade;
+        } else {
+            avaliacaoB.push(avaliacao);
+            somaIdadeBom = somaIdadeBom + idade;
+        }
+    }
+
+    let idadeMediaRegular = somaIdadeRegular / avaliacaoR.length;
+    let idadeMediaBom = somaIdadeBom / avaliacaoB.length ;
+    let mediaTotal = somaIdades / qntPessoas;
+
+    let percentRegular = avaliacaoR.length / 10 * 100;
+    let percentBom = avaliacaoB.length / 10 * 100;
+    
+    //SAÍDA
+
+    document.write(`A média da idade de pessoas que responderam que o filme era regular é de ${idadeMediaRegular.toFixed(1)} anos</br>`);
+    document.write(`A média da idade de pessoas que responderam que o filme era bom é de ${idadeMediaBom.tofixed(1)} anos</br>`);
+    document.write(`A média da idade de todas as pessoas que assistiram o filme é de ${mediaTotal.toFixed(1)} anos</br>`);
+    document.write(`O percentual de pessoas que classificaram o filme como regular é de ${percentRegular.toFixed(1)}%</br>`);
+    document.write(`O percentual de pessoas que classificaram o filme como bom é de ${percentBom.toFixed(1)}%</br>`);
